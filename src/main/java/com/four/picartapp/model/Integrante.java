@@ -15,15 +15,19 @@ public class Integrante {
     private String contrasena;
     @Column
     private String usuario;
+    @OneToOne
+    @JoinColumn
+    private Puesto puesto;
 
     public Integrante() {
     }
 
-    public Integrante(int idIntegrante, String nombre, String contrasena, String usuario) {
+    public Integrante(int idIntegrante, String nombre, String contrasena, String usuario, Puesto puesto) {
         this.idIntegrante = idIntegrante;
         this.nombre = nombre;
         this.contrasena = contrasena;
         this.usuario = usuario;
+        this.puesto = puesto;
     }
 
     public int getIdIntegrante() {
@@ -56,5 +60,14 @@ public class Integrante {
 
     public void setUsuario(String usuario) {
         this.usuario = usuario;
+    }
+
+
+    public Puesto getPuesto() {
+        return puesto;
+    }
+
+    public void setPuesto(Puesto puesto) {
+        this.puesto = puesto;
     }
 }
