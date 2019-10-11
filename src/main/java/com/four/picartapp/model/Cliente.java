@@ -2,29 +2,30 @@ package com.four.picartapp.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "Cliente")
 public class Cliente {
+    @Column @Id
+    private int idCliente;
     @Column
-    int idCliente;
+    private String nombre;
     @Column
-    String nombre;
+    private long telefono;
     @Column
-    long telefono;
+    private String correoElectronico;
     @Column
-    String correoElectronico;
+    private long matricula;
     @Column
-    long matricula;
+    private String curp;
     @Column
-    String curp;
+    private String facebook;
     @Column
-    String facebook;
+    private String nombreAval;
     @Column
-    String nombreAval;
-    @Column
-    String telefonoAval;
+    private String telefonoAval;
 
     public Cliente(int idCliente, String nombre, long telefono, String correoElectronico, long matricula, String curp, String facebook, String nombreAval, String telefonoAval) {
         this.idCliente = idCliente;

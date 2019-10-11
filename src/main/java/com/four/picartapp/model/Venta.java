@@ -1,23 +1,20 @@
 package com.four.picartapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Venta")
 public class Venta {
+    @Column @Id
+    private int idVenta;
     @Column
-    int idVenta;
+    private String fecha;
     @Column
-    String fecha;
-    @Column
-    int monto_total;
+    private int monto_total;
     @JoinColumn(name = "idCliente")
-    Cliente cliente;
+    private  Cliente cliente;
     @JoinColumn(name = "idIntegrante")
-    Integrante integrante;
+    private Integrante integrante;
 
     public Venta(int idVenta, String fecha, int monto_total, Cliente cliente, Integrante integrante) {
         this.idVenta = idVenta;

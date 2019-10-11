@@ -2,15 +2,17 @@ package com.four.picartapp.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
+
 
 @Entity
 @Table(name = "Categoria")
 public class Categoria {
+    @Column @Id
+    private int idCategoria;
     @Column
-    int idCategoria;
-    @Column
-    String name;
+    private String name;
 
     public Categoria(int idCategoria, String name) {
         this.idCategoria = idCategoria;

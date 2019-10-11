@@ -1,24 +1,21 @@
 package com.four.picartapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 
 @Entity
 @Table(name = "VentaDetalle")
 public class  VentaDetalle {
+    @Column @Id
+    private int idVentaDetalle;
     @Column
-    int idVentaDetalle;
+    private int cantidad;
     @Column
-    int cantidad;
-    @Column
-    int importe;
+    private int importe;
     @JoinColumn(name = "idVenta")
-    Venta venta;
+    private Venta venta;
     @JoinColumn(name = "idProducto")
-    Producto producto;
+    private Producto producto;
 
     public VentaDetalle(int idVentaDetalle, int cantidad, int importe, Venta venta, Producto producto) {
         this.idVentaDetalle = idVentaDetalle;
