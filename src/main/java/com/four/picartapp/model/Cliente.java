@@ -1,14 +1,13 @@
 package com.four.picartapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Cliente")
 public class Cliente {
-    @Column @Id
+    @Column
+    @Id
+    @GeneratedValue
     private int idCliente;
     @Column
     private String nombre;
@@ -37,6 +36,9 @@ public class Cliente {
         this.facebook = facebook;
         this.nombreAval = nombreAval;
         this.telefonoAval = telefonoAval;
+    }
+
+    public Cliente() {
     }
 
     public int getIdCliente() {

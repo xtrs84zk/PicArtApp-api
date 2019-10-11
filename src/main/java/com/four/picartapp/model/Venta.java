@@ -5,21 +5,28 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Venta")
 public class Venta {
-    @Column @Id
+    @Column
+    @Id
+    @GeneratedValue
     private int idVenta;
     @Column
     private String fecha;
     @Column
-    private int monto_total;
+    private int montoTotal;
+    @OneToOne
     @JoinColumn(name = "idCliente")
-    private  Cliente cliente;
+    private Cliente cliente;
+    @OneToOne
     @JoinColumn(name = "idIntegrante")
     private Integrante integrante;
 
-    public Venta(int idVenta, String fecha, int monto_total, Cliente cliente, Integrante integrante) {
+    public Venta() {
+    }
+
+    public Venta(int idVenta, String fecha, int montoTotal, Cliente cliente, Integrante integrante) {
         this.idVenta = idVenta;
         this.fecha = fecha;
-        this.monto_total = monto_total;
+        this.montoTotal = montoTotal;
         this.cliente = cliente;
         this.integrante = integrante;
     }
@@ -40,12 +47,12 @@ public class Venta {
         this.fecha = fecha;
     }
 
-    public int getMonto_total() {
-        return monto_total;
+    public int getmontoTotal() {
+        return montoTotal;
     }
 
-    public void setMonto_total(int monto_total) {
-        this.monto_total = monto_total;
+    public void setmontoTotal(int montoTotal) {
+        this.montoTotal = montoTotal;
     }
 
     public Cliente getCliente() {

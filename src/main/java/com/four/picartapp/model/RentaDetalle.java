@@ -1,20 +1,27 @@
 package com.four.picartapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "RentaDetalle")
 public class RentaDetalle {
-    @Column @Id
+    @Column
+    @Id
+    @GeneratedValue
     private int idRentaDetalle;
     @Column
     private int cantidad;
     @Column
     private int importe;
     @JoinColumn(name = "idRenta")
+    @OneToOne
     private Renta renta;
     @JoinColumn(name = "idProducto")
+    @OneToOne
     private Producto producto;
+
+    public RentaDetalle() {
+    }
 
     public RentaDetalle(int idRentaDetalle, int cantidad, int importe, Renta renta, Producto producto) {
         this.idRentaDetalle = idRentaDetalle;

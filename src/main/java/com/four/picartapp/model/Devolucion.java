@@ -1,18 +1,21 @@
 package com.four.picartapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Devolucion")
 public class Devolucion {
 
-    @JoinColumn(name = "idRenta")
-    private Renta renta;
     @Column
+    @Id
+    @GeneratedValue
     private int idDevolucion;
+    @JoinColumn(name = "idRenta")
+    @OneToOne
+    private Renta renta;
+
+    public Devolucion() {
+    }
     @Column
     private String fecha;
     @Column

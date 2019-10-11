@@ -7,6 +7,7 @@ import javax.persistence.*;
 public class Producto {
     @Column
     @Id
+    @GeneratedValue
     private int idProducto;
     @Column
     private String nombre;
@@ -21,6 +22,7 @@ public class Producto {
     @Column
     private String descripcion;
     @JoinColumn(name = "idCategoria")
+    @OneToOne
     private Categoria categoria;
 
 
@@ -33,6 +35,9 @@ public class Producto {
         this.cantidad = cantidad;
         this.rutaDeLaImagen = rutaDeLaImagen;
         this.descripcion = descripcion;
+    }
+
+    public Producto() {
     }
 
     public int getIdProducto() {

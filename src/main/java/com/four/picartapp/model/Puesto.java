@@ -1,15 +1,17 @@
 package com.four.picartapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Puesto")
 public class Puesto {
-    @Column @Id
+    @Column
+    @Id
+    @GeneratedValue
     private int idPuesto;
+
+    public Puesto() {
+    }
     @Column
     private String nombrePuesto;
 

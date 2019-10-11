@@ -1,14 +1,13 @@
 package com.four.picartapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Integrante")
 public class Integrante {
-    @Column @Id
+    @Column
+    @Id
+    @GeneratedValue
     private int idIntegrante;
     @Column
     private String nombre;
@@ -16,6 +15,9 @@ public class Integrante {
     private String contrasena;
     @Column
     private String usuario;
+
+    public Integrante() {
+    }
 
     public Integrante(int idIntegrante, String nombre, String contrasena, String usuario) {
         this.idIntegrante = idIntegrante;

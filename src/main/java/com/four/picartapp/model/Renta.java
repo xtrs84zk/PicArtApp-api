@@ -5,7 +5,9 @@ import javax.persistence.*;
 @Entity
 @Table(name = "Renta")
 public class Renta {
-    @Column @Id
+    @Column
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int idRenta;
     @Column
     private String fecha;
@@ -13,10 +15,15 @@ public class Renta {
     private String fechaDevolucionAcordada;
     @Column
     private int montoAcordado;
-    @JoinColumn(name = "idIntegrante")
+    @OneToOne
+    @JoinColumn
     private Integrante integrante;
-    @JoinColumn(name = "idCliente")
+    @OneToOne
+    @JoinColumn
     private Cliente cliente;
+
+    public Renta() {
+    }
 
     public Renta(int idRenta, String fecha, String fechaDevolucionAcordada, int montoAcordado, Integrante integrante, Cliente cliente) {
         this.idRenta = idRenta;

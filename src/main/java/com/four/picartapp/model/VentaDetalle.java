@@ -5,17 +5,25 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "VentaDetalle")
-public class  VentaDetalle {
-    @Column @Id
+public class VentaDetalle {
+    @Column
+    @Id
+    @GeneratedValue
     private int idVentaDetalle;
     @Column
     private int cantidad;
     @Column
     private int importe;
     @JoinColumn(name = "idVenta")
+    @OneToOne
     private Venta venta;
+    @OneToOne
     @JoinColumn(name = "idProducto")
     private Producto producto;
+
+    public VentaDetalle() {
+
+    }
 
     public VentaDetalle(int idVentaDetalle, int cantidad, int importe, Venta venta, Producto producto) {
         this.idVentaDetalle = idVentaDetalle;
