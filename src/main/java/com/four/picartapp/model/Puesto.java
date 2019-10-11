@@ -9,11 +9,11 @@ public class Puesto {
     @Id
     @GeneratedValue
     private int idPuesto;
+    @Column
+    private String nombrePuesto;
 
     public Puesto() {
     }
-    @Column
-    private String nombrePuesto;
 
     public Puesto(int idPuesto, String nombrePuesto) {
         this.idPuesto = idPuesto;
