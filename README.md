@@ -2,15 +2,15 @@
 REST API for the PicArtApp project found on https://github.com/Agreedroom/PicArtApp 
 
 ## Getting Started
-Basic SQL, Java and Spring knowledge.
+Basic MySQL, Java and Spring knowledge.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+There is some software needed.
 
 ```
 IntelliJ IDEA (preferably the Ultimate one)
-Spring plugin
+Spring plugin (I believe it's not needed if you use the Initializr)
 Java 1.8
 Tested on MySQL 5.7.26 and 8.0.16
 (MySQL server has to be already running ;)
@@ -24,22 +24,22 @@ Clone the repository and open it on IntelliJ IDEA
 git clone https://github.com/xtrs84zk/PicArtApp-api.git
 ```
 
-After is imported, configure pom.xml and resources/applicaction.properties
+After is imported, configure pom.xml and resources/applicaction.properties.
+
 If everything is alright, your Spring Api should be listening on the configured port.
 
 ## Running the tests
 
 Just test it as any other Spring Api, some fetch here, some post there. Voila.
-We did use [Postman](https://www.getpostman.com) for this step.
-## Deployment
 
-Add additional notes about how to deploy this on a live system
+
+We did use [Postman](https://www.getpostman.com) for this step.
 
 ## Built With
 
-* [Spring Initializr](https://start.spring.io) 
+* [Spring Initializr](https://start.spring.io)  - Spring framework
 * [Maven](https://maven.apache.org/) - Dependency Management
-
+* [README](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) - PurpleBooth's Template
 ## Authors
 [Javier Sánchez](https://github.com/xtrs84zk)
 
