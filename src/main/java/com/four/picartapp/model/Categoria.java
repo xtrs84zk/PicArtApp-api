@@ -10,7 +10,7 @@ public class Categoria {
     @Id
     @GeneratedValue
     private int idCategoria;
-    @Column(unique = true)
+    @Column(unique = true, length = 40)
     private String name;
 
     public Categoria() {

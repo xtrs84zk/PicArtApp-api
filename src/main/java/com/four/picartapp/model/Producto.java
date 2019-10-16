@@ -9,7 +9,7 @@ public class Producto {
     @Id
     @GeneratedValue
     private int idProducto;
-    @Column(unique = true)
+    @Column(unique = true, length = 40)
     private String nombre;
     @Column
     private int costo_venta;
@@ -17,7 +17,7 @@ public class Producto {
     private int costo_renta;
     @Column
     private int cantidad;
-    @Column(unique = true)
+    @Column(unique = true, length = 40)
     private String rutaDeLaImagen;
     @Column
     private String descripcion;
