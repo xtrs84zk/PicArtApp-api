@@ -10,12 +10,11 @@ public class Categoria {
     @Id
     @GeneratedValue
     private int idCategoria;
+    @Column(unique = true)
+    private String name;
 
     public Categoria() {
     }
-    @Column
-    private String name;
-
     public Categoria(int idCategoria, String name) {
         this.idCategoria = idCategoria;
         this.name = name;

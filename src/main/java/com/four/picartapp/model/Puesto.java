@@ -9,7 +9,7 @@ public class Puesto {
     @Id
     @GeneratedValue
     private int idPuesto;
-    @Column
+    @Column(unique = true)
     private String nombrePuesto;
 
     public Puesto() {

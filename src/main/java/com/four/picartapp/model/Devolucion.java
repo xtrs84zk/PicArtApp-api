@@ -13,9 +13,6 @@ public class Devolucion {
     @JoinColumn(name = "idRenta")
     @OneToOne
     private Renta renta;
-
-    public Devolucion() {
-    }
     @Column
     private String fecha;
     @Column
@@ -25,7 +22,8 @@ public class Devolucion {
     @Column
     private String observaciones;
 
-
+    public Devolucion() {
+    }
     public Devolucion(int idDevolucion, String fecha, int diasExtra, int montoCobrado, String observaciones, Renta renta) {
         this.idDevolucion = idDevolucion;
         this.fecha = fecha;

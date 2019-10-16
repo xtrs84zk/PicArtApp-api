@@ -13,11 +13,11 @@ public class Cliente {
     private String nombre;
     @Column
     private long telefono;
-    @Column
+    @Column(unique = true)
     private String correoElectronico;
-    @Column
+    @Column(unique = true)
     private long matricula;
-    @Column
+    @Column(unique = true)
     private String curp;
     @Column
     private String facebook;

@@ -13,7 +13,7 @@ public class Integrante {
     private String nombre;
     @Column
     private String contrasena;
-    @Column
+    @Column(unique = true)
     private String usuario;
     @OneToOne
     @JoinColumn
