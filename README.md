@@ -24,7 +24,7 @@ Clone the repository and open it on IntelliJ IDEA
 git clone https://github.com/xtrs84zk/PicArtApp-api.git
 ```
 
-After is imported, configure pom.xml and resources/applicaction.properties.
+After everything has been imported, configure pom.xml and applicaction.properties. Then, build the project and run PicartappApplication.
 
 If everything is alright, your Spring Api should be listening on the configured port.
 
