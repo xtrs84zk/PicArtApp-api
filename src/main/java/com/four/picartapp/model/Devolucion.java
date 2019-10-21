@@ -24,6 +24,7 @@ public class Devolucion {
 
     public Devolucion() {
     }
+
     public Devolucion(int idDevolucion, String fecha, int diasExtra, int montoCobrado, String observaciones, Renta renta) {
         this.idDevolucion = idDevolucion;
         this.fecha = fecha;

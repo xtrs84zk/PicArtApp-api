@@ -15,6 +15,7 @@ public class Categoria {
 
     public Categoria() {
     }
+
     public Categoria(int idCategoria, String name) {
         this.idCategoria = idCategoria;
         this.name = name;
