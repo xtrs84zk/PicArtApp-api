@@ -15,7 +15,7 @@ public class VentaDetalle {
     @Column
     private int importe;
     @JoinColumn(name = "idVenta")
-    @OneToOne
+    @ManyToOne
     private Venta venta;
     @OneToOne
     @JoinColumn(name = "idProducto")
