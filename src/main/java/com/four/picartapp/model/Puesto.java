@@ -1,10 +1,11 @@
 package com.four.picartapp.model;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "Puesto")
-public class Puesto {
+public class Puesto implements Serializable {
     @Column
     @Id
     @GeneratedValue

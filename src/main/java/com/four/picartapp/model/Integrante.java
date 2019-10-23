@@ -18,6 +18,8 @@ public class Integrante {
     @OneToOne
     @JoinColumn
     private Puesto puesto;
+    private boolean enabled;
+    private boolean tokenExpired;
 
     public Integrante() {
     }
@@ -62,12 +64,27 @@ public class Integrante {
         this.usuario = usuario;
     }
 
-
     public Puesto getPuesto() {
         return puesto;
     }
 
     public void setPuesto(Puesto puesto) {
         this.puesto = puesto;
+    }
+
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    public boolean isTokenExpired() {
+        return tokenExpired;
+    }
+
+    public void setTokenExpired(boolean tokenExpired) {
+        this.tokenExpired = tokenExpired;
     }
 }
