@@ -11,22 +11,22 @@ public class Puesto implements Serializable {
     @GeneratedValue
     private int idPuesto;
     @Column(unique = true, length = 40)
-    private String nombrePuesto;
+    private String namePuesto;
 
     public Puesto() {
     }
 
-    public Puesto(int idPuesto, String nombrePuesto) {
+    public Puesto(int idPuesto, String namePuesto) {
         this.idPuesto = idPuesto;
-        this.nombrePuesto = nombrePuesto;
+        this.namePuesto = namePuesto;
     }
 
     public String getNombrePuesto() {
-        return nombrePuesto;
+        return namePuesto;
     }
 
-    public void setNombrePuesto(String nombrePuesto) {
-        this.nombrePuesto = nombrePuesto;
+    public void setNombrePuesto(String namePuesto) {
+        this.namePuesto = namePuesto;
     }
 
     public int getIdPuesto() {

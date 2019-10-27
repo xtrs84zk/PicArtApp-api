@@ -1,6 +1,9 @@
 package com.four.picartapp.model;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "Integrante")
@@ -10,26 +13,29 @@ public class Integrante {
     @GeneratedValue
     private int idIntegrante;
     @Column
-    private String nombre;
-    @Column
-    private String contrasena;
+    private String name;
+
+    @Length(min = 5, message = "*Your password must have at least 5 characters")
+    private String password;
+
     @Column(unique = true, length = 40)
-    private String usuario;
-    @OneToOne
-    @JoinColumn
-    private Puesto puesto;
+    private String username;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    private Set<Role> roles;
+
     private boolean enabled;
     private boolean tokenExpired;
 
     public Integrante() {
     }
 
-    public Integrante(int idIntegrante, String nombre, String contrasena, String usuario, Puesto puesto) {
+    public Integrante(int idIntegrante, String name, String password, String username, Set<Role> roles) {
         this.idIntegrante = idIntegrante;
-        this.nombre = nombre;
-        this.contrasena = contrasena;
-        this.usuario = usuario;
-        this.puesto = puesto;
+        this.name = name;
+        this.password = password;
+        this.username = username;
+        this.roles = roles;
     }
 
     public int getIdIntegrante() {
@@ -40,36 +46,36 @@ public class Integrante {
         this.idIntegrante = idIntegrante;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getContrasena() {
-        return contrasena;
+    public String getPassword() {
+        return password;
     }
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public Puesto getPuesto() {
-        return puesto;
+    public Set<Role> getRoles() {
+        return roles;
     }
 
-    public void setPuesto(Puesto puesto) {
-        this.puesto = puesto;
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
     }
 
     public boolean isEnabled() {

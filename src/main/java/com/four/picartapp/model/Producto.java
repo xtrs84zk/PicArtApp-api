@@ -10,7 +10,7 @@ public class Producto {
     @GeneratedValue
     private int idProducto;
     @Column(unique = true, length = 40)
-    private String nombre;
+    private String name;
     @Column
     private int costo_venta;
     @Column
@@ -26,10 +26,10 @@ public class Producto {
     private Categoria categoria;
 
 
-    public Producto(Categoria categoria, int idProducto, String nombre, int costo_venta, int costo_renta, int cantidad, String rutaDeLaImagen, String descripcion) {
+    public Producto(Categoria categoria, int idProducto, String name, int costo_venta, int costo_renta, int cantidad, String rutaDeLaImagen, String descripcion) {
         this.categoria = categoria;
         this.idProducto = idProducto;
-        this.nombre = nombre;
+        this.name = name;
         this.costo_venta = costo_venta;
         this.costo_renta = costo_renta;
         this.cantidad = cantidad;
@@ -48,12 +48,12 @@ public class Producto {
         this.idProducto = idProducto;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getCosto_venta() {

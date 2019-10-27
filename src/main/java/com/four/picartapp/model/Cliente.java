@@ -10,7 +10,7 @@ public class Cliente {
     @GeneratedValue
     private int idCliente;
     @Column
-    private String nombre;
+    private String name;
     @Column
     private long telefono;
     @Column(unique = true, length = 40)
@@ -22,19 +22,19 @@ public class Cliente {
     @Column
     private String facebook;
     @Column
-    private String nombreAval;
+    private String nameAval;
     @Column
     private String telefonoAval;
 
-    public Cliente(int idCliente, String nombre, long telefono, String correoElectronico, long matricula, String curp, String facebook, String nombreAval, String telefonoAval) {
+    public Cliente(int idCliente, String name, long telefono, String correoElectronico, long matricula, String curp, String facebook, String nameAval, String telefonoAval) {
         this.idCliente = idCliente;
-        this.nombre = nombre;
+        this.name = name;
         this.telefono = telefono;
         this.correoElectronico = correoElectronico;
         this.matricula = matricula;
         this.curp = curp;
         this.facebook = facebook;
-        this.nombreAval = nombreAval;
+        this.nameAval = nameAval;
         this.telefonoAval = telefonoAval;
     }
 
@@ -50,11 +50,11 @@ public class Cliente {
     }
 
     public String getNombre() {
-        return nombre;
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombre(String name) {
+        this.name = name;
     }
 
     public long getTelefono() {
@@ -98,11 +98,11 @@ public class Cliente {
     }
 
     public String getNombreAval() {
-        return nombreAval;
+        return nameAval;
     }
 
-    public void setNombreAval(String nombreAval) {
-        this.nombreAval = nombreAval;
+    public void setNombreAval(String nameAval) {
+        this.nameAval = nameAval;
     }
 
     public String getTelefonoAval() {
